@@ -1,0 +1,16 @@
+@import url("https://db.onlinewebfonts.com/c/4789cf828c01b22acb9b2b73ee91aa0d?family=NYTKarnakCondensed");
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    justify-content: center;
+
+    h1 {
+        font-family: "NYTKarnakCondensed"; 
+        font-size: 2rem;
+        margin-left: 10px;
+        color: #333;
+    }
+}

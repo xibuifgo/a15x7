@@ -1,0 +1,116 @@
+@import '../components/_variables.module.scss';
+
+.pass-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    h1 {
+        font-family: 'bubble', 'sans-serif';
+        font-size: 72px;
+        color: $ayahs-color;
+    }
+}
+
+.three-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.word-div {
+    width: 30vw;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
+    h2 {
+        margin-top: 2vh;
+        font-family: "child-writing", "sans-serif";
+        font-size: 28px;
+        border-radius: 4px;
+        background-color: white;
+        padding: 4px;
+    }
+}
+.go-btn {
+    border: 1px solid gray;
+    border-radius: 1000px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    margin: 16px 0 16px 0;
+}
+
+.go-btn:hover {
+    background-color: darkgreen;
+}
+
+.input {
+    border: 1px solid black;
+    width: 25vw;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    padding: 0 0.5em;
+    font-size: 16px;
+}
+
+.btn {
+    font-family: nyt-franklin, Arial;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    // width: -moz-fit-content;
+    width: fit-content;
+    min-width: 5.5em;
+    height: 3em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5em;
+    max-width: 80vw;
+    border-radius: 32px;
+    line-height: 1.5em;
+    cursor: pointer;
+    border: 1px solid;
+    background-color: $ayahs-color;
+    color: white;
+    border-color: darken($ayahs-color, 10%);
+    margin: 16px 0;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: $selected;
+    width: 80vw;
+    margin: auto;
+
+    p {
+        margin-bottom: 1em;
+    }
+}
+
+.scrollable {
+  max-height: 80vh;   // or any height you want
+  overflow-y: auto;
+  padding: 8px; // optional, for scrollbar space
+}
+
+@media (max-width: 639px) {
+    .pass-div {
+        h1 {
+            font-size: 48px;
+        }
+    }
+
+}

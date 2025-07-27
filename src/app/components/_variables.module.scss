@@ -1,0 +1,54 @@
+// Colours
+$strands-blue: #aedfee;
+$stroke-tertiary: #dfdfdf;
+$selected: #d8d8c5;
+$strands-yellow: #f8cd05;
+$transparent: #fff0;
+$ayahs-color: #89CFF0;
+$word1: #BCD4E6;
+$word2: #A1CAF1;
+$word3: #6CA0DC;
+
+// Horizontal Spacing
+$horizontal-spacing-0-5: 4px;
+$horizontal-spacing-1: 8px;
+$horizontal-spacing-1-5: 12px;
+$horizontal-spacing-2: 16px;
+$horizontal-spacing-2-5: 20px;
+$horizontal-spacing-3: 24px;
+$horizontal-spacing-4: 32px;
+$horizontal-spacing-5: 40px;
+$horizontal-spacing-6: 48px;
+$horizontal-spacing-7: 56px;
+$horizontal-spacing-8: 64px;
+$horizontal-spacing-9: 72px;
+$horizontal-spacing-10: 80px;
+
+// Vertical Spacing
+$vertical-spacing-0-5: 4px;
+$vertical-spacing-1: 8px;
+$vertical-spacing-1-5: 12px;
+$vertical-spacing-2: 16px;
+$vertical-spacing-2-5: 20px;
+$vertical-spacing-3: 24px;
+$vertical-spacing-4: 32px;
+$vertical-spacing-5: 40px;
+$vertical-spacing-6: 48px;
+$vertical-spacing-7: 56px;
+$vertical-spacing-8: 64px;
+$vertical-spacing-9: 72px;
+$vertical-spacing-10: 80px;
+
+@font-face {
+  font-family: 'bubble';
+  src: url('/SuperShiny-0v0rG.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "child-writing";
+  src: url('/Cookiemonster-gv11.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
+}

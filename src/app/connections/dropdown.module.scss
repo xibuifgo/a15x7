@@ -1,0 +1,22 @@
+.hint-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;  
+    margin-bottom: 8px;
+}
+
+.icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+}
+
+.dropdown {
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #EFEFEF;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,55 @@
+{
+    "words": [
+        "coaster",
+        "blanket",
+        "hat",
+        "granny circle",
+        "quirky",
+        "funny",
+        "kind",
+        "giving",
+        "boo",
+        "girly",
+        "batta",
+        "my love",
+        "dooji",
+        "advice",
+        "N/A",
+        "more dooji"
+    ],
+
+    "categories": [
+        "things you've crocheted",
+        "what we love about you",
+        "thanks, ____!",
+        "reasons we call you"
+    ], 
+
+    "things you've crocheted": [
+        "coaster",
+        "blanket",
+        "hat",
+        "granny circle"
+    ],
+
+    "what we love about you": [
+        "quirky",
+        "funny",
+        "kind",
+        "giving"
+    ], 
+
+    "thanks, ____!": [
+        "boo",
+        "girly",
+        "batta",
+        "my love"
+    ],
+
+    "reasons we call you": [
+        "dooji",
+        "advice",
+        "N/A",
+        "more dooji"
+    ]
+}
