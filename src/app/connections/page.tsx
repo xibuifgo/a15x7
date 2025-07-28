@@ -1,11 +1,18 @@
+type WordsData = {
+  categories: string[];
+  words: string[];
+  [key: string]: string[]; // for category arrays
+};
+
 'use client';
 import { useState, useEffect } from 'react';
 import styles from './connect.module.scss';
-import wordsData from './words/words.json';
+import wordsDataRaw from './words/words.json';
 import DropDown from './DropDown';
 
 let mistakesRemaining = 4;
 let catsCompleted = 0;
+const wordsData = wordsDataRaw as WordsData;
 
 function shuffleArray(arr: string[] = wordsData.words) {
     const words = [...arr]; // Create a copy of the array to avoid mutating the original
@@ -38,7 +45,7 @@ function checkCategories(words: string[]) {
     const catTracker = [];
 
     for (const category of categories) {
-        const categoryWords = (wordsData as any)[category];
+        const categoryWords = wordsData[category];
         
         words.sort();
         categoryWords.sort();
@@ -126,7 +133,7 @@ export default function Connections() {
         deselect();
     }
 
-    function clicked(key: Number) {
+    function clicked(key: number) {
         const id = 'card-' + key;
         const card = document.getElementById(id);
         const submitBtn = document.getElementById("submit-btn");
@@ -198,7 +205,7 @@ export default function Connections() {
         const cats = wordsData.categories;
 
         for (const category of cats) {
-            const categoryWords = (wordsData as any)[category];
+            const categoryWords = wordsData[category];
             if (categoryWords.includes(word)) {
                 return category;
             }
@@ -207,7 +214,7 @@ export default function Connections() {
     }
 
     function createLog(words: string[], category: string = "none") {
-        let newEntries: string[] = [];
+        const newEntries: string[] = [];
 
         if (category === "none") {
             for (const word of words) {
@@ -233,7 +240,7 @@ export default function Connections() {
             }
 
             const category = catsLeft[index];
-            const categoryWords = (wordsData as any)[category];
+            const categoryWords = wordsData[category];
 
             setCorrectGroups(prev => [...prev, {category, words: categoryWords}]);
             setLastSolvedCategory(category);
@@ -362,7 +369,7 @@ export default function Connections() {
     }
 
     function toEmoji() {
-        let msg = ["Connections", "Puzzle #Ayah"];
+        const msg = ["Connections", "Puzzle #Ayah"];
         let row = [];
 
         for (let i = 0; i < gameLog.length; i++) {
