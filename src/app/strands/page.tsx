@@ -303,7 +303,7 @@ export default function StrandsPage() {
 
     function genMsg() {
         const msg = ['Strands #Ayah\n"We have a witch in the family!"'];
-        let tmp = "";
+        let tmp = [];
 
         // Count how many hints were used before any word was solved
         const preHints = hintIndices.filter(idx => idx === 0).length;
@@ -311,30 +311,32 @@ export default function StrandsPage() {
 
         // Add all pre-hint emojis at the start
         if (preHints > 0) {
-            tmp = emojis["hint"].repeat(preHints);
+            tmp.push(emojis["hint"].repeat(preHints));
         }
 
         for (let i = 0; i < solvedPaths.length; i++) {
             const path = solvedPaths[i];
-            tmp = tmp + emojis[path.type];
+            tmp.push(emojis[path.type]);
 
             // Add a hint emoji if a hint was used after this word
             if (hintIndices[hintIdx] === i + 1) {
-                tmp = tmp + emojis["hint"];
+                tmp.push(emojis["hint"]);
                 hintIdx++;
             }
 
-            if (i % 4 === 3) {
-                msg.push(tmp);
-                tmp = "";
+            if (tmp.length === 4) {
+                console.log(tmp);
+                msg.push(tmp.join(""));
+                tmp = [];
             }
 
             if (i === solvedPaths.length - 1) {
-                msg.push(tmp);
+                msg.push(tmp.join(""));
             }
         }
 
         const message = msg.join("\n");
+        console.log(message);
 
         if (navigator.share) {
             navigator.share({
