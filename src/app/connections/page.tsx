@@ -377,27 +377,26 @@ export default function Connections() {
             if (catEmojis[color]) {
                 row.push(catEmojis[color]);
             }
-
             if (i % 4 === 3) {
-                msg.push(row.join(""))
-                row = []
+                msg.push(row.join(""));
+                row = [];
             }
         }
+        const message = msg.join("\n");
 
-        console.log("Game Log:", gameLog);
-        console.log("Message: ", msg.join("\n"))
-
-        // Copy the text to clipboard
-        navigator.clipboard.writeText(msg.join("\n"));
-
-        const clip = document.getElementById('clipboard');
-
-        if (clip) {
-            clip.style.backgroundColor = "#90ee90"
-            clip.style.color = "#013220"
-            clip.innerHTML = "Copied!"
+        if (navigator.share) {
+            navigator.share({
+                text: message,
+            });
+        } else {
+            navigator.clipboard.writeText(message);
+            const clip = document.getElementById('clipboard');
+            if (clip) {
+                clip.style.backgroundColor = "#90ee90";
+                clip.style.color = "#013220";
+                clip.innerHTML = "Copied!";
+            }
         }
-
     }
 
     function revealWord() {

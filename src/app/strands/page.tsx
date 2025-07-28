@@ -334,13 +334,20 @@ export default function StrandsPage() {
             }
         }
 
-        navigator.clipboard.writeText(msg.join("\n"));
+        const message = msg.join("\n");
 
-        const btn = document.getElementById("msg-btn");
-        if (btn) {
-            btn.style.backgroundColor = "#90ee90"
-            btn.style.color = "#013220"
-            btn.innerHTML = "Copied!"
+        if (navigator.share) {
+            navigator.share({
+                text: message,
+            });
+        } else {
+            navigator.clipboard.writeText(message);
+            const btn = document.getElementById("msg-btn");
+            if (btn) {
+                btn.style.backgroundColor = "#90ee90";
+                btn.style.color = "#013220";
+                btn.innerHTML = "Copied!";
+            }
         }
     }
 

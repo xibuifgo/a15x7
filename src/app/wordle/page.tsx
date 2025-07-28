@@ -154,14 +154,18 @@ export default function Wordle() {
     }
 
     function sendMsg() {
-        navigator.clipboard.writeText(msg);
-
-        const clip = document.getElementById("clipboard");
-
-        if (clip) {
-            clip.style.backgroundColor = "#90ee90";
-            clip.style.color = "#013220";
-            clip.innerHTML = "Copied to Clipboard!"
+        if (navigator.share) {
+            navigator.share({
+                text: msg,
+            });
+        } else {
+            navigator.clipboard.writeText(msg);
+            const clip = document.getElementById("clipboard");
+            if (clip) {
+                clip.style.backgroundColor = "#90ee90";
+                clip.style.color = "#013220";
+                clip.innerHTML = "Copied to Clipboard!";
+            }
         }
     }
 
@@ -303,19 +307,30 @@ export default function Wordle() {
                     handleColorChange(outcomes, activeRow);
                     setTimeout(() => {
                         handleKeyChange(guess, outcomes);
-                    }, 1000)
+                    }, 1000);
+                    setTimeout(() => {
+                        setIsGameOver(true);
+                    }, 1000); // <-- Add this line!
                 } else {
                     const outcomes = colorLogic(guess, word);
                     genLog(outcomes);
                     handleColorChange(outcomes, activeRow);
                     setTimeout(() => {
                         handleKeyChange(guess, outcomes);
-                    }, 1000)
-                    setActiveRow(prev => prev + 1);
-                    setActiveCol(0);
+                    }, 1000);
+                    if (activeRow !== 5) {
+                        setActiveRow(prev => prev + 1);
+                        setActiveCol(0);
+                    } else {
+                        genLog(outcomes, true);
+                        setTimeout(() => {
+                            setIsGameOver(true);
+                            console.log("Message: ", msg);
+                        }, 1000); // <-- Already here!
+                    }
                 }
             }
-            return 
+            return;
         }
     }
 
