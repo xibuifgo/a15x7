@@ -40,6 +40,8 @@ $vertical-spacing-1-5: 12px;
 }
 
 .game {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     text-align: center;
