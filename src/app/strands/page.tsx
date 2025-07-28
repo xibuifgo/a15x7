@@ -302,11 +302,11 @@ export default function StrandsPage() {
     }
 
     function genMsg() {
-        let msg = ['Strands #Ayah\n"We have a witch in the family!"'];
+        const msg = ['Strands #Ayah\n"We have a witch in the family!"'];
         let tmp = "";
 
         // Count how many hints were used before any word was solved
-        let preHints = hintIndices.filter(idx => idx === 0).length;
+        const preHints = hintIndices.filter(idx => idx === 0).length;
         let hintIdx = preHints;
 
         // Add all pre-hint emojis at the start
@@ -433,7 +433,7 @@ export default function StrandsPage() {
                 <div className={styles["riddle-cont"]}>
                     <section id="riddle" className = {styles["riddle-box"]}>
                         <h3 className={styles["riddle-title"]}>today&rsquo;s theme</h3>
-                        <h1 className={styles.riddle}>"We have a witch in the family!"</h1>
+                        <h1 className={styles.riddle}>&quot;We have a witch in the family!&quot;</h1>
                     </section>
                 </div>
                 {guess && <p className={styles.word} id="word">{guess}</p>}

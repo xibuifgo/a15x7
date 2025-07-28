@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Tile from './components/Tile';
 import styles from './wordle.module.scss';
 
-let log: string[] = [];
+const log: string[] = [];
 let msg = "";
 
 export default function Wordle() {
@@ -35,9 +35,9 @@ export default function Wordle() {
 
     function colorLogic(guess: string, word: string): ("A" | "P" | "C")[] {
         // guess and word are both 5-letter strings
-        let outcomes: ("A" | "P" | "C")[] = Array(5).fill("A"); // Default to absent
-        let wordArr = word.split("");
-        let guessArr = guess.split("");
+        const outcomes: ("A" | "P" | "C")[] = Array(5).fill("A"); // Default to absent
+        const wordArr = word.split("");
+        const guessArr = guess.split("");
 
         // First pass: check for correct (green)
         for (let i = 0; i < 5; i++) {
@@ -138,7 +138,7 @@ export default function Wordle() {
     }
 
     function genLog(outcomes: ("A" | "P" | "C")[], isGameWon = false) {
-        let out_emojis = [];
+        const out_emojis = [];
 
         for ( const letter of outcomes ) {
             out_emojis.push(emojis[letter]);
@@ -218,7 +218,7 @@ export default function Wordle() {
                 if (activeCol === 5){
                     const guess = board[activeRow].map(cell => cell.letter).join("");
                     if (guess === word) {
-                        let outcomes: ("A" | "P" | "C")[] = Array(5).fill("C");
+                        const outcomes: ("A" | "P" | "C")[] = Array(5).fill("C");
                         handleColorChange(outcomes, activeRow);
                         setTimeout(() => {
                             handleKeyChange(guess, outcomes);
@@ -229,7 +229,7 @@ export default function Wordle() {
                             setIsGameOver(true);
                         }, 1000);
                     } else {
-                        let outcomes = colorLogic(guess, word);
+                        const outcomes = colorLogic(guess, word);
                         handleColorChange(outcomes, activeRow);
                         setTimeout(() => {
                             handleKeyChange(guess, outcomes);
@@ -297,7 +297,7 @@ export default function Wordle() {
             if (activeCol === 5){
                 const guess = board[activeRow].map(cell => cell.letter).join("");
                 if (guess === word) {
-                    let outcomes: ("A" | "P" | "C")[] = Array(5).fill("C");
+                    const outcomes: ("A" | "P" | "C")[] = Array(5).fill("C");
                     setIsGameWon(true);
                     genLog(outcomes, true);
                     handleColorChange(outcomes, activeRow);
@@ -305,7 +305,7 @@ export default function Wordle() {
                         handleKeyChange(guess, outcomes);
                     }, 1000)
                 } else {
-                    let outcomes = colorLogic(guess, word);
+                    const outcomes = colorLogic(guess, word);
                     genLog(outcomes);
                     handleColorChange(outcomes, activeRow);
                     setTimeout(() => {

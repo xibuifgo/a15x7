@@ -4,8 +4,8 @@ import styles from './connect.module.scss';
 import wordsData from './words/words.json';
 import DropDown from './DropDown';
 
-var mistakesRemaining = 4;
-var catsCompleted = 0;
+let mistakesRemaining = 4;
+let catsCompleted = 0;
 
 function shuffleArray(arr: string[] = wordsData.words) {
     const words = [...arr]; // Create a copy of the array to avoid mutating the original
@@ -99,9 +99,9 @@ export default function Connections() {
         "#BA81C5": "🟪"
     };
 
-    var clickCount = 0;
-    var stopClick = false;
-    var clickedWords: string[] = [];
+    let clickCount = 0;
+    let stopClick = false;
+    let clickedWords: string[] = [];
 
     useEffect(() => {
     setWords(shuffleArray(wordsData.words));
@@ -169,7 +169,7 @@ export default function Connections() {
 
     function deselect() {
     
-        for (var i in clickedWords) {
+        for (const i in clickedWords) {
             const card = document.getElementById(clickedWords[i]);
             if (card) {
                 card.style.background = "";
@@ -264,7 +264,7 @@ export default function Connections() {
             return;
         }
 
-        for (var i in clickedWords) {
+        for (const i in clickedWords) {
             const word = document.getElementById(clickedWords[i]);
 
             if (word) {
@@ -338,7 +338,7 @@ export default function Connections() {
             if (bubble) {
                 bubble.style.backgroundColor = "#ffffff";
 
-                for (var i in clickedWords) {
+                for (const i in clickedWords) {
                     const card = document.getElementById(clickedWords[i]);
                     if (card) {
                         card.classList.add(styles.mistakeShake);

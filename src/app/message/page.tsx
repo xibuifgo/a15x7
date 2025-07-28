@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './msg.module.scss';
 
 const blue1 = '#BCD4E6';
@@ -21,7 +21,7 @@ export default function Message() {
         { label: "Puzzle 3", color: blue3, id: "bottom", input_name:  "word3", link: "/strands" },
     ];
 
-    function handleChange(e: { target: { name: any; value: any; }; }) {
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         setInputs({ ...inputs, [e.target.name]: e.target.value });
     }
 
