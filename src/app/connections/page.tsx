@@ -450,28 +450,27 @@ export default function Connections() {
                         </button>
                         <h2>Hints</h2>
                         <div className={styles["dd-cont"]}>
-                        
-                            <DropDown 
-                            title="Straightforward"
-                            color="#F9DF6D"
+                            <DropDown
+                                title="Straightforward"
+                                color="#F9DF6D"
                             >
-                                <div className={styles.idk}>Considering all the grandma activities you do, I'm surprised you didn't figure this one out yet</div>
+                                <div className={styles.idk}>Considering all the grandma activities you do, I&apos;m surprised you didn&apos;t figure this one out yet</div>
                             </DropDown>
                             <DropDown 
-                            title="Easy"
-                            color="#A0C35A"
+                                title="Easy"
+                                color="#A0C35A"
                             >
-                                <div className={styles.idk}>I'm sure you've heard these words a lot</div>
+                                <div className={styles.idk}>I&apos;m sure you&apos;ve heard these words a lot</div>
+                            </DropDown>
+                            <DropDown
+                                title="Hard"
+                                color="#B0C4EF"
+                            >
+                                <div className={styles.idk}>My response to this category would be you&apos;re welcome</div>
                             </DropDown>
                             <DropDown 
-                            title="Hard"
-                            color = "#B0C4EF"
-                            >
-                                <div className={styles.idk}>My response to this category would be you're welcome</div>
-                            </DropDown>
-                            <DropDown 
-                            title="Tricky"
-                            color="#BA81C5"
+                                title="Tricky"
+                                color="#BA81C5"
                             >
                                 <div className={styles.idk}> Our bad </div>
                             </DropDown>
@@ -493,7 +492,7 @@ export default function Connections() {
             <hr className={styles.bar}></hr>
             {isDoneBefore && (
                 <div className={styles["alert"]}>
-                    <span className={styles["alert-text"]}>Ayah you've done this before!</span>
+                    <span className={styles["alert-text"]}>Ayah you&apos;ve done this before!</span>
                 </div>
             )}
             {isOneAway && (

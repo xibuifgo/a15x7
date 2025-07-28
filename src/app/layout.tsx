@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AYT Games",
+  icons: [
+    { rel: "icon", url: "/elephant.png?v=2"}
+  ]
 };
 
 export default function RootLayout({

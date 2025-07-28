@@ -335,7 +335,7 @@ export default function Wordle() {
                         {!isGameWon && <h3>The word was: {word}!</h3>}
                         <div className={styles.explain}>
                             From one of my favorite voice messages:
-                            <p className={styles.quote}>"You need to grab the bull by the horns"</p>
+                            <p className={styles.quote}>&quot;You need to grab the bull by the horns&quot;</p>
                             Now you know why I asked for it on the sisters group, I wanted to put it here
                         </div>
                         <button className={styles.btn} onClick={sendMsg} id='clipboard'>Share Your Results</button>

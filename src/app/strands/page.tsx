@@ -389,7 +389,7 @@ export default function StrandsPage() {
                             width={450}
                             height={450}
                         />
-                        <p>Thanks for giving me your weird remedies in the winter break (They worked)</p>
+                        <p>Thanks for giving me your weird remedies in the winter break {"("}They worked{" )"}</p>
                         <button className={styles["btn-in"]} onClick={genMsg} id="msg-btn">Share Results!</button>
                         <button className={styles["word-btn"]} onClick={revealWord} id="reveal">Reveal Secret Word</button>
                     </div>
